@@ -2,43 +2,42 @@
 
 public class Food {
     private String name;
-    private int energyIncrease, happinessIncrease, weightGain;
+    private int energyRating, happinessRating, weightGain;
 
-    public Food(String name, int energyIncrease, int happinessIncrease, int weightGain){
+    public Food(String name, int energyRating, int happinessRating, int weightGain){
         this.name = name;
-        this.energyIncrease=energyIncrease;
-        this.happinessIncrease=happinessIncrease;
+        this.energyRating=energyRating;
+        this.happinessRating=happinessRating;
         this.weightGain=weightGain;
     }
-
     public String getName() {
+
         return name;
     }
-
     public void setName(String name) {
+
         this.name = name;
     }
+    public int getEnergyRating() {
 
-    public int getEnergyIncrease() {
-        return energyIncrease;
+        return energyRating;
     }
+    public void setEnergyRating(int energyIncrease) {
 
-    public void setEnergyIncrease(int energyIncrease) {
-        this.energyIncrease = energyIncrease;
+        this.energyRating = energyIncrease;
     }
+    public int getHappinessRating() {
 
-    public int getHappinessIncrease() {
-        return happinessIncrease;
+        return happinessRating;
     }
+    public void setHappinessRating(int happinessIncrease) {
 
-    public void setHappinessIncrease(int happinessIncrease) {
-        this.happinessIncrease = happinessIncrease;
+        this.happinessRating = happinessIncrease;
     }
-
     public int getWeightGain() {
+
         return weightGain;
     }
-
     public void setWeightGain(int weightGain) {
         this.weightGain = weightGain;
     }

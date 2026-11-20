@@ -2,12 +2,45 @@
 
 public class Game {
     private String name;
-    private int happinessIncr, weightDecr;
+    private int happinessIncr, weightLoss;
 
-    public Game(String name, int happinessIncr, int weightDecr){
+    public Game(String name, int happinessIncr, int weightLoss){
         this.name = name;
         this.happinessIncr=happinessIncr;
-        this.weightDecr=weightDecr;
+        this.weightLoss=weightLoss;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHappinessIncr() {
+        return happinessIncr;
+    }
+
+    public void setHappinessIncr(int happinessIncr) {
+        this.happinessIncr = happinessIncr;
+    }
+
+    public int getWeightLoss() {
+        return weightLoss;
+    }
+
+    public void setWeightLoss(int weightDecr) {
+        this.weightLoss = weightDecr;
+    }
+
+    public boolean isWinner(){
+        int num = (int)(Math.random()*1)+1;
+        if (num == 1) {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
