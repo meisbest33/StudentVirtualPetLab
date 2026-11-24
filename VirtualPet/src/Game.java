@@ -35,8 +35,7 @@ public class Game {
     }
 
     public boolean isWinner(){
-        int num = (int)(Math.random()*1)+1;
-        if (num == 1) {
+        if (Math.random() < .5) {
             return true;
         }
         else{

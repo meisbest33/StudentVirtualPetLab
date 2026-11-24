@@ -1,10 +1,8 @@
 // Part B
-
 public class VirtualPetB {
     private String name;
     private int energyLvl, happyLvl, weight, ageYear, ageMonth;
 
-    Food obj = new Food();
 
     public VirtualPetB(String name){
         this.name = name;
@@ -16,25 +14,35 @@ public class VirtualPetB {
     }
 
     public String getName(){
-
         return name;
     }
-
     public String toString(){
         return name + "'s status: Energy level: " + energyLvl + " Happiness level: " + happyLvl + " Weight: " + weight + " Age: " + ageYear + "years(s) and " + ageMonth + "months(s)";
     }
 
     public void feed(Food other){
+        energyLvl += other.getEnergyRating();
+        happyLvl += other.getHappinessRating();
+        weight += other.getWeightGain();
 
-        int energy = 0;
-        if(energy <=9) {
-            energyLvl++;
+        if(energyLvl > 10){
+            energyLvl = 10;
         }
-        weight ++;
+        if(energyLvl < 0){
+            energyLvl = 0;
+        }
+        if(happyLvl > 10){
+            happyLvl = 10;
+        }
+        if(happyLvl < 0){
+            happyLvl = 0;
+        }
+        if(weight < 5){
+            weight = 5;
+        }
     }
 
     public int getEnergyLevel(){
-
         return energyLvl;
     }
 
@@ -44,15 +52,27 @@ public class VirtualPetB {
     }
 
     public boolean play(Game other){
-        int getWeight =
-        if(happyLvl<=9){
-            happyLvl++;
+        boolean won = other.isWinner();
+
+        weight -= other.getWeightLoss();
+
+        if(won){
+            happyLvl += other.getHappinessIncr();
         }
-        if(weight>=6){
-            weight--;
+        else{
+            happyLvl -= other.getHappinessIncr();
         }
 
-
+        if(weight < 5){
+            weight = 5;
+        }
+        if(happyLvl > 10){
+            happyLvl = 10;
+        }
+        if(happyLvl < 0){
+            happyLvl = 0;
+        }
+        return won;
     }
 
     public void updateStatus(){
@@ -67,6 +87,5 @@ public class VirtualPetB {
             ageMonth-=12;
             ageYear++;
         }
-
     }
 }
